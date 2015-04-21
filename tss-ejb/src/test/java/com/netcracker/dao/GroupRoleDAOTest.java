@@ -19,15 +19,6 @@ import org.junit.Test;
 public class GroupRoleDAOTest {
 
 	@Test
-	public void stupidTest() throws NamingException, SQLException {
-		InitialContext ic = new InitialContext();
-		DataSource ds = (DataSource) ic.lookup("java:jboss/datasources/PostgreSQLDS");
-		Connection con = ds.getConnection();
-		Statement stmt = con.createStatement();
-		ResultSet rs = stmt.executeQuery("select * from tts_user");  
-	}
-
-	@Test
 	public void testPersist() throws NamingException {
 		GroupRoleDAO grDao = new GroupRoleDAO();
 		RoleDAO roleDao = new RoleDAO();
