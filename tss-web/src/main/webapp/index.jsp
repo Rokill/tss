@@ -57,20 +57,8 @@
 		<div class="row">
 			<div class="col-md-1"></div>
 			<div class="col-md-10">
-				<h1>Taxi Service Systemmmm</h1>
-				<p>Content should be here. 2</p>
-				<%
-				out.println("Here:");
-					UserDAO UserDao = new UserDAO();
-					User user = new User("Tom", "tom@aol.com", "tompass");
-					UserDao.delete(user);
-					UserDao.persist(user);
-					if (user.equals(UserDao.get("Tom")))
-						out.println("No worries.");
-					else
-						out.println("Not happy.");
-					UserDao.close();
-				%>
+				<h1>Taxi Service System</h1>
+				<p>Content should be here.</p>
 			</div>
 			<div class="col-md-1"></div>
 		</div>
