@@ -1,10 +1,5 @@
 package com.netcracker.dao;
 
-
-/**
-*
-* @author Stanislav Zabielin
-*/
 public class RoleDAO extends GenericDAO<Role> {
 
 	
@@ -12,7 +7,6 @@ public class RoleDAO extends GenericDAO<Role> {
 		super();
 	}
 	
-	@Override
 	public void update(Role role) {
 		Role tmp = get(role.getRolename());
 		em.getTransaction().begin();

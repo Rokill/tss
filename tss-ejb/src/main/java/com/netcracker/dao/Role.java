@@ -6,12 +6,7 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Table;
-import javax.validation.constraints.NotNull;
 
-/**
-*
-* @author Stanislav Zabielin
-*/
 @Entity
 @Table(name = "role")
 public class Role implements Serializable {
@@ -25,7 +20,6 @@ public class Role implements Serializable {
 	}
 
 	@Id
-	@NotNull
 	@Column(name="rolename")
 	private String rolename;
 

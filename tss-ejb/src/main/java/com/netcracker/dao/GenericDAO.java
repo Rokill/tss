@@ -7,10 +7,6 @@ import javax.persistence.EntityManager;
 import javax.persistence.Persistence;
 import javax.persistence.Query;
 
-/**
- *
- * @author Stanislav Zabielin
- */
 public abstract class GenericDAO<T> {
 
 	protected Class<T> entityClass;
@@ -27,21 +23,15 @@ public abstract class GenericDAO<T> {
 		return em.find(entityClass, key);
 	}
 
-	public T get(int key) {
-		return em.find(entityClass, key);
-	}
-
 	public List<T> getAll() {
 		Query q = em.createQuery("select u from entityClass u");
-		List<T> list = q.getResultList();
-		return list;
+		List<T> userList = q.getResultList();
+		return userList;
 	}
 
 	public void delete(T t) {
-		em.getTransaction().begin();
 		t = em.merge(t);
 		em.remove(t);
-		em.getTransaction().commit();
 	}
 
 	public void persist(T t) {
@@ -50,18 +40,13 @@ public abstract class GenericDAO<T> {
 		em.getTransaction().commit();
 	}
 
-	public abstract void update(T t);
-
 	public void close() {
 		em.close();
 	}
 
 	public EntityManager createEntityManager() {
-		if (em != null && em.isOpen())
-			return em;
-		else
-			return Persistence.createEntityManagerFactory("entityManager")
-					.createEntityManager();
+		return Persistence.createEntityManagerFactory("entityManager")
+				.createEntityManager();
 	}
 
 }

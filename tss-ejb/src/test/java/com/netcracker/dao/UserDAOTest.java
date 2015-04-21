@@ -18,11 +18,6 @@ import org.junit.Test;
 
 import junit.framework.TestCase;
 
-
-/**
-*
-* @author Stanislav Zabielin
-*/
 public class UserDAOTest {
 
 	@Test
